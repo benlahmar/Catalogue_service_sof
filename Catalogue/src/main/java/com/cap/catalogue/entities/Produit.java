@@ -6,6 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -20,6 +23,7 @@ public class Produit {
 	double price;
 	
 	@ManyToOne()
+	@JsonBackReference
 	Categorie categorie;
 	
 }
