@@ -68,11 +68,13 @@ public class CatalogueApi {
 		Page<Produit> res = prepo.findByCategorieId(idc, p);
 		return res;
 	}
+	@Value("${server.port}")
+	String port;
 	
-	@GetMapping("/auteur")
+	@GetMapping("/categories/auteur")
 	public String getinfo()
 	{
-		return auteur;
+		return auteur+"----- instance"+port;
 		
 	}
 	
